@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="image/logo.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <header>
+            <article>
+                <section class="navbar_1">
+                    <div class="container">
+                        <nav class="d-flex justify-content-between">
+                            <div>
+                                <a href="#" class="me-3">
+                                    <i class="bi bi-envelope"></i>
+                                    <span class="ms-2 navbar-text">info@saigontourist.net</span>
+                                </a>
+                                <a href="#" class="me-3">
+                                    <i class="bi bi-telephone"></i>
+                                    <span class="ms-2 navbar-text">Hotline: 1900 1808</span>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#" class="ms-3">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <span class="ms-2 navbar-text">Chọn điểm khởi hành</span>
+                                </a>
+                                <a href="login.html" class="ms-3">
+                                    <i class="bi bi-box-arrow-in-right"></i>
+                                    <span class="ms-2 navbar-text">Đăng nhập</span>
+                                </a>
+                                <a href="#" class="ms-3">
+                                    <i class="bi bi-1-circle-fill"></i>
+                                    <span class="ms-2 navbar-text">English</span>
+                                </a>
+                            </div>
+                        </nav>
+                    </div>
+                </section>
+                  
+                <section>
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container">
+                            <a class="navbar-brand " href="./index.html"><img src="./image/logo.png" alt=""></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                  <a class="nav-link active" aria-current="page" href="./index.html">Trang chủ</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="tour_trong_nuoc.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="location.href=this.href">
+                                      Tour trong nước
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                    <div class="row">
+                                      <div class="col-12 col-md-4">
+                                        <h6>Miền Bắc</h6>
+                                        <ul>
+                                          <li style="list-style-type: none;"><a href="">Hà Nội</a></li>
+                                          <li style="list-style-type: none;"><a href="">Hạ Long</a></li>
+                                          <li style="list-style-type: none;"><a href="">Sa pa</a></li>
+                                          <li style="list-style-type: none;"><a href="">Ninh Bình</a></li>
+                                          <li style="list-style-type: none;"><a href="">Hải Phòng</a></li>
+                                          <li style="list-style-type: none;"><a href="">Thanh Hóa</a></li>
+                                        </ul>
+                                      </div>
+                                      <div class="col-12 col-md-4">
+                                        <h6>Miền Trung</h6>
+                                        <ul>
+                                          <li style="list-style-type: none;"><a href="">Phan Thiết</a></li>
+                                          <li style="list-style-type: none;"><a href="">Nha Trang</a></li>
+                                          <li style="list-style-type: none;"><a href="">Đà Lạt</a></li>
+                                          <li style="list-style-type: none;"><a href="">Tây Nguyên</a></li>
+                                          <li style="list-style-type: none;"><a href="">Tuy Hòa - Quy Nhơn - Quảng Ngãi</a></li>
+                                          <li style="list-style-type: none;"><a href="">Huế - Quảng Bình</a></li>
+                                          <li style="list-style-type: none;"><a href="">Nghệ An</a></li>
+                                          <li style="list-style-type: none;"><a href="">Đà Nẵng</a></li>
+                                        </ul>
+                                      </div>
+                                      <div class="col-12 col-md-4">
+                                        <h6>Miền Nam</h6>
+                                        <ul>
+                                          <li style="list-style-type: none;"><a href="">Phú Quốc</a></li>
+                                          <li style="list-style-type: none;"><a href="">Miền Tây</a></li>
+                                          <li style="list-style-type: none;"><a href="">Côn Đảo</a></li>
+                                          <li style="list-style-type: none;"><a href="">Hồ Tràm - Vũng Tàu</a></li>
+                                          <li style="list-style-type: none;"><a href="">TP.Hồ Chí Minh</a></li>
+                                          <li style="list-style-type: none;"><a href="">Tây Ninh</a></li>
+                                          <li style="list-style-type: none;"><a href="">Đông Nam Bộ</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="./tour_nuoc_ngoai.html" role="button" data-bs-toggle="dropdown" aria-expanded="false" onclick="location.href=this.href">
+                                      Tour nước ngoài
+                                  </a>
+                                  <ul class="dropdown-menu">
+                                    <div class="row">
+                                      <div class="col-12 col-md-4">
+                                        <h6>Châu Á</h6>
+                                        <ul>
+                                          <li style="list-style-type: none;"><a href="">Ấn Độ</a></li>
+                                          <li style="list-style-type: none;"><a href="">Buhatan</a></li>
+                                          <li style="list-style-type: none;"><a href="">Trung Quốc</a></li>
+                                          <li style="list-style-type: none;"><a href="">Đài Loan</a></li>
+                                          <li style="list-style-type: none;"><a href="">DuBai</a></li>
+                                          <li style="list-style-type: none;"><a href="">Hàn Quốc</a></li>
+                                          <li style="list-style-type: none;"><a href="">Hồng Kông</a></li>
+                                          <li style="list-style-type: none;"><a href="">Malaysia</a></li>
+                                          <li style="list-style-type: none;"><a href="">Nhật Bản</a></li>
+                                          <li style="list-style-type: none;"><a href="">Singapore</a></li>
+                                          <li style="list-style-type: none;"><a href="">Thái Lan</a></li>
+                                          <li style="list-style-type: none;"><a href="">Các Tiểu Vương Quốc Ả Rập</a></li>
+                                          <li style="list-style-type: none;"><a href="">Lào</a></li>
+                                          <li style="list-style-type: none;"><a href="">Indonesia</a></li>
+                                          <li style="list-style-type: none;"><a href="">Trung Đông</a></li>
+                                          <li style="list-style-type: none;"><a href="">Qatar</a></li>
+                                          <li style="list-style-type: none;"><a href="">Philippines</a></li>
+                                        </ul>
+                                      </div>
+                                      <div class="col-12 col-md-4">
+                                        <h6>Châu Âu</h6>
+                                        <ul>
+                                          <li style="list-style-type: none;"><a href="">Vương Quốc Anh</a></li>
+                                          <li style="list-style-type: none;"><a href="">Châu Âu</a></li>
+                                          <li style="list-style-type: none;"><a href="">Scotland</a></li>
+                                          <li style="list-style-type: none;"><a href="">Thụy Điển</a></li>
+                                          <li style="list-style-type: none;"><a href="">Thổ Nhĩ Kỳ</a></li>
+                                        </ul>
+                                      </div>
+                                      <div class="col-12 col-md-4">
+                                        <h6>Châu Mỹ - Châu Úc - Châu Phi</h6>
+                                        <ul>
+                                          <li style="list-style-type: none;"><a href="">Úc</a></li>
+                                          <li style="list-style-type: none;"><a href="">Mỹ</a></li>
+                                          <li style="list-style-type: none;"><a href="">Nam Phi</a></li>
+                                          <li style="list-style-type: none;"><a href="">New Zealand</a></li>
+                                          <li style="list-style-type: none;"><a href="">Canada</a></li>
+                                          <li style="list-style-type: none;"><a href="">Nam Mỹ</a></li>
+                                          <li style="list-style-type: none;"><a href="">Ai Cập</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </ul>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="./cam_nang_du_lich.html">Dịch vụ du lịch</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" href="./lien_he.html">Liên hệ</a>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                      </nav>
+                </section>
+            </article>
+            <input id="toggle-dates" class="d-none">
+        </header>
+
+        <main class="bg-login">
+            <article class="box-login">
+                <h3>Đăng nhập</h3>
+                <br><br>
+                <div class="row g-3">
+                    <div class="col-12 col-md-5">
+                    <p>Đăng nhập sử dụng tài khoảng mạng xã hội</p>
+                    <a href="" class="btn btn-primary btn-login w-100" style="color: #fff;">
+                        <i class="bi bi-facebook"></i>
+                        <span><small>Đăng nhập với Facebook</small></span>
+                    </a>
+                    <br><br>
+                    <a href="" class="btn btn-danger btn-login w-100" style="color: #fff;">
+                        <i class="bi bi-google"></i>
+                        <span><small>Đăng nhập với Google.</small></span>
+                    </a>
+                    </div>
+                    <div class="col-12 col-md-7">
+                    <div class="form-floating mb-3">
+                        <form action="">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="Địa chỉ email">
+                        </form>
+                    </div>
+                    <div class="form-floating">
+                        <form action="">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Mật khẩu">
+                        </form>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <form action="">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1"> Ghi nhớ
+                        </form>
+                        <a href="">Quên mật khẩu ?</a>
+                    </div>
+                    <div class="d-flex justify-content-between mt-3">
+                        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                        <button class="btn btn-danger">Hủy</button>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <p>Chưa có tài khoản ? <a href="">Đăng ký ngay</a></p>
+                    </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <br>
+        <footer>
+          <article>
+            <section class="footer1">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <img src="./image/logo.png" alt="">
+                  <p>Lữ hành Saigontourist, <br> thương hiệu lữ hành hàng đầu Việt Nam Thương hiệu quốc gia</p>
+                  <img src="./image/footer/prize.png" alt="">
+                  <p>Tổng đài: 1900 1808 <br> Email: info@saigontourist.net</p>
+                </div>
+                <div class="col-12 col-md-8">
+                  <div class="row">
+                    <div class="col-6 col-md-4">
+                      <ul> <h5>DỊCH VỤ</h5>
+                        <li style="list-style-type: none;"><a href="">Tour trong nước</a></li>
+                        <li style="list-style-type: none;"><a href="">Tour nước ngoài</a></li>
+                        <li style="list-style-type: none;"><a href="">Dịch vụ du lịch</a></li>
+                        <li style="list-style-type: none;"><a href="">Vé máy bay</a></li>
+                        <li style="list-style-type: none;"><a href="">Thuê xe</a></li>
+                        <li style="list-style-type: none;"><a href="">Du học Saigontourist</a></li>
+                        <li style="list-style-type: none;"><a href="">Việc làm nước ngoài</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <ul> <h5>THÔNG TIN</h5>
+                        <li style="list-style-type: none;"><a href="">Tin Lữ hành Saigontourist</a></li>
+                        <li style="list-style-type: none;"><a href="">Tuyến điểm</a></li>
+                        <li style="list-style-type: none;"><a href="">Trách nhiệm xã hội</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <ul> <h5>CHĂM SÓC KHÁCH HÀNG</h5>
+                        <li style="list-style-type: none;"><a href="">Thẻ khách hàng</a></li>
+                        <li style="list-style-type: none;"><a href="">Đổi điểm Hoa Mai Vàng</a></li>
+                        <li style="list-style-type: none;"><a href="">Tải app Saigontourist</a></li>
+                        <li style="list-style-type: none;"><a href="">Travel Voucher</a></li>
+                        <li style="list-style-type: none;"><a href="">Bảo hiểm du lịch</a></li>
+                        <li style="list-style-type: none;"><a href="">Ý kiến khách hàng</a></li>
+                        <li style="list-style-type: none;"><a href="">Tra cứu thông tin Đoàn</a></li>
+                        <li style="list-style-type: none;"><a href="">Giải quyết khiếu nại</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-6 col-md-4">
+                      <ul> <h5>LIÊN HỆ</h5>
+                        <li style="list-style-type: none;"><a href="">Giới thiệu</a></li>
+                        <li style="list-style-type: none;"><a href="">Liên hệ</a></li>
+                        <li style="list-style-type: none;"><a href="">Chi nhánh</a></li>
+                        <li style="list-style-type: none;"><a href="">Quy định</a></li>
+                        <li style="list-style-type: none;"><a href="">Điều khoản chung</a></li>
+                        <li style="list-style-type: none;"><a href="">Tuyển dụng</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section class="footer2">
+                <img src="image/footer/thequocte.gif" alt="">
+                <p><small>Bản quyền 2006 - 2024 © Công ty TNHH Một Thành Viên Dịch vụ Lữ hành Saigontourist.</small></p>
+                <p><small>45 Lê Thánh Tôn, Quận 1, TPHCM</small>.</p>
+                <p><small>ĐT:  (84-28) 38 279 279 - Fax: (84-28) 38 224 987. </small></p>
+                <p><small>Số đăng ký kinh doanh: 0310891532 do Sở kế hoạch và đầu tư TPHCM cấp/thay đổi lần thứ 12, ngày 26/12/2023</small></p>
+                <p><small>Giấy phép kinh doanh Dịch vụ Lữ hành Quốc tế: 79-300/2018 / TCDL-GP-LHQT</small></p>
+                <p><small>Người đại diện: Ông Nguyễn Thành Lưu.</small></p>
+                <p><small>® Ghi rõ nguồn "SAIGONTOURIST.NET" khi sử dụng lại thông tin từ website này.</small></p>
+                <a href=""><img src="image/footer/banner-web-tai-App.jpg" alt=""></a>
+                <h3>Tư vấn & đặt dịch vụ: 1900 1808</h3>
+                <p>Website SAIGONTOURIST.NET đã được đăng ký với Bộ Công Thương</p>
+                <a href=""><img src="image/footer/20150827110756-dathongbao.png" alt="" style="max-width: 15%;"></a>
+                <p>Kết nối với Lữ hành Saigontourist <a href=""><img src="image/footer/social-fa.gif" alt="" style="max-width: 5%;"></a></p>
+                <p class="d-flex justify-content-end"><small>Copyright © 2017. All Rights Reserved by IDTEK.</small></p>
+            </section>
+          </article>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="javascript/js.js"></script>
+</body>
+</html>
