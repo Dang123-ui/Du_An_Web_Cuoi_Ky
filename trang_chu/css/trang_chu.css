@@ -60,6 +60,12 @@ a:hover{
     box-shadow: none;
     backdrop-filter: blur(10px);
 }
+@media (max-width: 768px) {
+    .dropdown-menu {
+        max-width: 50%; 
+        padding: 10px; 
+    }
+}
 .dropdown-menu a {
     color: #ffffff !important;
     text-decoration: none;
@@ -482,7 +488,7 @@ color: #0282de;
     justify-content: center;
 }
 .footer1{
-    background-image: url("../image/background-footer.jpg");
+    background-image: url("../image/footer/background-footer.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
