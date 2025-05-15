@@ -1,0 +1,208 @@
+body{
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh; 
+  margin: 0;
+}
+.video-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; 
+  overflow: hidden;
+  z-index: -1;
+}
+.video-background video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  object-fit: cover;
+}
+
+.register {
+    width: 400px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.2); /* hoặc rgba(0,0,0,0.2) nếu nền tối */
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+.form-content{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.form-control:focus{
+  box-shadow: none !important;
+}
+
+.input-group .label{
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+  z-index: 5;
+}
+.input-group .label-char{
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+
+.input-group input:focus ~ label .label-char,
+.input-group input:valid ~ label .label-char {
+  transform: translateY(-30px);
+  font-size: 14px;
+  color: orangered;
+}
+/* .error-message{
+  color: red;
+  font-weight: bolder;
+  font-size: 25px;
+}  */
+.flight-img{
+  position: absolute;
+  bottom: -15px;
+  left: -200px;
+  width: 600px;
+  z-index: -2;
+}
+
+
+
+.otp-Form {
+  width: 340px;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding:32px 30px 20px 30px;
+  gap: 20px;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+  border-radius: 15px;
+  animation: fadeIn .3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.mainHeading {
+  font-size: 1.1em;
+  color: rgb(15, 15, 15);
+  font-weight: 700;
+}
+.otpSubheading {
+  font-size: 0.7em;
+  color: black;
+  line-height: 17px;
+  text-align: center;
+}
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.otp-input {
+  background-color: rgb(228, 228, 228);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+  caret-color: rgb(127, 129, 255);
+  color: rgb(44, 44, 44);
+  outline: none;
+  font-weight: 600;
+}
+
+.otp-input:focus,
+    .otp-input:valid {
+      background-color: rgba(127, 129, 255, 0.199);
+      transition-duration: .3s;
+    }
+
+    .verifyButton {
+      width: 100%;
+      height: 30px;
+      border: none;
+      background-color: rgb(127, 129, 255);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 10px;
+      transition-duration: .2s;
+      
+    }
+
+    .verifyButton:hover {
+      background-color: rgb(144, 145, 255);
+      transition-duration: .2s;
+    }
+
+    .exitBtn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      border: none;
+      color: black;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+
+
+    .resendNote {
+      font-size: 0.7em;
+      color: black;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .resendBtn {
+      background-color: transparent;
+      border: none;
+      color: rgb(127, 129, 255);
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 700;
+    }
+
+    .timer {
+      font-size: 0.7em;
+      color: black;
+      font-weight: 600;
+      width: 100%;
+  text-align: center;
+
+  margin-bottom: 0;
+    }

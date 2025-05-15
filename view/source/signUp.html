@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/signUp.css" />
+    <title>Đăng ký</title>
+  </head>
+  <body>
+    <div class="video-background">
+      <video autoplay loop muted playsinline id="bg-video">
+        <source src="../img/bgr-signup.mp4" type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ video HTML5.
+      </video>
+    </div>
+    <div class="register">
+      <div class="container">
+        <h4 class="text-center">Đăng ký đi</h4>
+        <div class="row">
+          <div class="col-md-5 col-xs-12 social-block">
+            <a
+              class="btn btn-primary btn-facebook w-100 mb-2"
+              onclick="loginWithFacebook()"
+            >
+              <span
+                ><img
+                  src="../img/facebook.png"
+                  alt="icon"
+                  style="width: 30px"
+                  id="eyeIcon"
+              /></span>     
+              Đăng ký với facebook
+            </a>
+            <a
+              class="btn btn-danger btn-google w-100 mt-2"
+              onclick="loginWithGoogle()"
+            >
+              <span
+                ><img
+                  src="../img/google.png"
+                  alt="icon"
+                  style="width: 30px"
+                  id="eyeIcon"
+              /></span>
+              Đăng ký với google
+            </a>
+          </div>
+          <div class="col-md-7 col-xs-12" style="border-left: 2px solid #ddd">
+            <form
+              id="registerForm"
+              method="POST"
+              novalidate=""
+              class="has-validation-callback"
+              
+            >
+              <div class="form-content">
+                <div class="form-group">
+                  <div class="input-group position-relative mt-2">
+                    <input
+                      type="text"
+                      name="fullName"
+                      required
+                      id="name"
+                      class="form-control"
+                      style="border-color: orangered;"
+                    />
+                    <span
+                      class="input-group-text"
+                      style="border-color: orangered; border-radius: 0 5px 5px 0;"
+                      ><img src="../img/user.png" alt="" style="width: 30px"
+                    /></span>
+                    <label class="label">
+                      <span class="label-char" style="--index: 0">H</span>
+                      <span class="label-char" style="--index: 1">ọ</span>
+                      <span class="label-char" style="--index: 2">&nbsp;</span>
+                      <span class="label-char" style="--index: 3">v</span>
+                      <span class="label-char" style="--index: 4">à</span>
+                      <span class="label-char" style="--index: 5">&nbsp;</span>
+                      <span class="label-char" style="--index: 6">t</span>
+                      <span class="label-char" style="--index: 7">e</span>
+                      <span class="label-char" style="--index: 8">n</span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="error-message"
+                    id="name-error"
+                    style="visibility: hidden"
+                  >
+                    fffffff
+                  </div>
+                </div>
+
+                <div class="form-group position-relative">
+                  
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="form-control"
+                      style="border-color: orangered !important"
+                    />
+                    <span
+                      class="input-group-text"
+                      style="border-color: orangered; border-radius: 0 5px 5px 0;"
+                      ><img src="../img/email.png" alt="" style="width: 30px"
+                    /></span>
+                    <label class="label">
+                      <span class="label-char" style="--index: 0">E</span>
+                      <span class="label-char" style="--index: 1">m</span>
+                      <span class="label-char" style="--index: 2">a</span>
+                      <span class="label-char" style="--index: 3">i</span>
+                      <span class="label-char" style="--index: 4">l</span>
+                    </label>
+                  </div>
+
+                  <div
+                    class="error-message"
+                    id="email-error"
+                    style="visibility: hidden"
+                  >
+                    hhhh
+                  </div>
+                </div>
+
+                <div class="form-group position-relative">
+                  
+                  <div class="input-group">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      required
+                      class="form-control"
+                      style="border-color: orangered !important"
+                    />
+                    <span
+                      class="input-group-text p-0"
+                      style="border-color: orangered; border-radius: 0 5px 5px 0;"
+                    >
+                      <button
+                        class="btn border-0"
+                        type="button"
+                        id="togglePassword"
+                      >
+                        <img
+                          src="../img/close_eye.png"
+                          alt="icon"
+                          style="width: 30px"
+                          id="passwordIcon"
+                        />
+                      </button>
+                    </span>
+                    <label class="label">
+                      <span class="label-char" style="--index: 0">M</span>
+                      <span class="label-char" style="--index: 1">ậ</span>
+                      <span class="label-char" style="--index: 2">t</span>
+                      <span class="label-char" style="--index: 3">&nbsp;</span>
+                      <span class="label-char" style="--index: 4">K</span>
+                      <span class="label-char" style="--index: 5">h</span>
+                      <span class="label-char" style="--index: 6">ẩ</span>
+                      <span class="label-char" style="--index: 7">u</span>
+                    </label>
+                  </div>
+                  <div
+                    class="error-message"
+                    id="password-error"
+                    style="visibility: hidden"
+                  >fff</div>
+                </div>
+
+                <div class="form-group position-relative">
+                  
+                  <div class="input-group">
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      required
+                      class="form-control"
+                      style="border-color: orangered !important"
+                    />
+                    <span
+                      class="input-group-text p-0"
+                      style="border-color: orangered; border-radius: 0 5px 5px 0;"
+                    >
+                      <button
+                        class="btn border-0"
+                        type="button"
+                        id="toggleConfirmPassword"
+                      >
+                        <img
+                          src="../img/close_eye.png"
+                          alt="icon"
+                          style="width: 30px"
+                          id="confirmPasswordIcon"
+                        />
+                      </button>
+                    </span>
+                    <label class="label">
+                      <span class="label-char" style="--index: 0">X</span>
+                      <span class="label-char" style="--index: 1">á</span>
+                      <span class="label-char" style="--index: 2">c</span>
+                      <span class="label-char" style="--index: 3">&nbsp;</span>
+                      <span class="label-char" style="--index: 4">n</span>
+                      <span class="label-char" style="--index: 5">h</span>
+                      <span class="label-char" style="--index: 6">ậ</span>
+                      <span class="label-char" style="--index: 7">n</span>
+                      <span class="label-char" style="--index: 8">&nbsp;</span>
+                      <span class="label-char" style="--index: 9">M</span>
+                      <span class="label-char" style="--index: 10">ậ</span>
+                      <span class="label-char" style="--index: 11">t</span>
+                      <span class="label-char" style="--index: 12">&nbsp;</span>
+                      <span class="label-char" style="--index: 13">K</span>
+                      <span class="label-char" style="--index: 14">h</span>
+                      <span class="label-char" style="--index: 15">ẩ</span>
+                      <span class="label-char" style="--index: 16">u</span>
+                    </label>
+
+                  </div>
+
+                  <div
+                    class="error-message"
+                    id="confirmPassword-error"
+                    style="visibility: hidden"
+                  >
+                    fff
+                  </div>
+                </div>
+
+                <div class="form-group position-relative">
+                  
+                  <div class="input-group">
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      class="form-control"
+                      style="border-color: orangered !important"
+                    />
+                    <span
+                      class="input-group-text"
+                      style="border-color: orangered; border-radius: 0 5px 5px 0;"
+                      ><img
+                        src="../img/phone-call.png"
+                        alt=""
+                        style="width: 30px"
+                    /></span>
+                    <label class="label">
+                      <span class="label-char" style="--index: 0">S</span>
+                      <span class="label-char" style="--index: 1">ố</span>
+                      <span class="label-char" style="--index: 2">&nbsp;</span>
+                      <span class="label-char" style="--index: 3">đ</span>
+                      <span class="label-char" style="--index: 4">i</span>
+                      <span class="label-char" style="--index: 5">ệ</span>
+                      <span class="label-char" style="--index: 6">n</span>
+                      <span class="label-char" style="--index: 7">&nbsp;</span>
+                      <span class="label-char" style="--index: 8">t</span>
+                      <span class="label-char" style="--index: 9">h</span>
+                      <span class="label-char" style="--index: 10">o</span>
+                      <span class="label-char" style="--index: 11">ạ</span>
+                      <span class="label-char" style="--index: 12">i</span>
+                    </label>
+
+                  </div>
+
+                  <div
+                    class="error-message"
+                    id="phone-error"
+                    style="visibility: hidden"
+                  >
+                    fff
+                  </div>
+                </div>
+                <div class="form-group position-relative">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      required
+                      class="form-control"
+                      style="border-color: orangered !important"
+                    />
+                    <span
+                      class="input-group-text"
+                      style="border-color: orangered; border-radius: 0 5px 5px 0;"
+                      ><img src="../img/address.png" alt="" style="width: 30px"
+                    /></span>
+                    <label class="label">
+                      <span class="label-char" style="--index: 0">Đ</span>
+                      <span class="label-char" style="--index: 1">ị</span>
+                      <span class="label-char" style="--index: 2">a</span>
+                      <span class="label-char" style="--index: 3">&nbsp;</span>
+                      <span class="label-char" style="--index: 4">c</span>
+                      <span class="label-char" style="--index: 5">h</span>
+                      <span class="label-char" style="--index: 6">ỉ</span>
+                    </label>
+                    
+                  </div>
+
+                  <div
+                    class="error-message"
+                    id="address-error"
+                    style="visibility: hidden"
+                  >
+                    fff
+                  </div>
+                </div>
+              </div>
+              <div class="form-footer mt-3">
+                <div class="row gap-10">
+                  <div class="col-xs-6 col-sm-6">
+                    <div>
+                      <div
+                        class="grecaptcha-badge"
+                        data-style="bottomright"
+                        style="
+                          width: 256px;
+                          height: 60px;
+                          display: block;
+                          transition: right 0.3s;
+                          position: fixed;
+                          bottom: 14px;
+                          right: -186px;
+                          box-shadow: gray 0px 0px 5px;
+                          border-radius: 2px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div class="grecaptcha-logo">
+                          <iframe
+                            title="reCAPTCHA"
+                            width="256"
+                            height="60"
+                            role="presentation"
+                            name="a-4pre663cas6r"
+                            frameborder="0"
+                            scrolling="no"
+                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
+                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LczWKcpAAAAAHGDLGvc8qm3n5-d5k5zBFWHd7k_&amp;co=aHR0cHM6Ly93d3cuc2FpZ29udG91cmlzdC5uZXQ6NDQz&amp;hl=vi&amp;v=hbAq-YhJxOnlU-7cpgBoAJHb&amp;size=invisible&amp;cb=czpgtmxftrpo"
+                          ></iframe>
+                        </div>
+                        <div class="grecaptcha-error"></div>
+                        <textarea
+                          id="g-recaptcha-response"
+                          name="g-recaptcha-response"
+                          class="g-recaptcha-response"
+                          style="
+                            width: 250px;
+                            height: 40px;
+                            border: 1px solid rgb(193, 193, 193);
+                            margin: 10px 25px;
+                            padding: 0px;
+                            resize: none;
+                            display: none;
+                          "
+                        ></textarea>
+                      </div>
+                      <iframe style="display: none"></iframe>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">
+                      Đăng Ký
+                    </button>
+                  </div>
+                  <div class="col-xs-6 col-sm-6 mbot-10">
+                    <a
+                      type="submit"
+                      class="btn btn-danger btn-block w-100"
+                      data-dismiss="modal"
+                      href="/vi/"
+                      >Hủy
+                    </a>
+                  </div>
+                </div>
+                <div class="login-link text-end mt-3">
+                  Đã có tài khoản?
+                  <a
+                    type="button"
+                    href="/vi/login?return=/vi/"
+                    class="btn btn-link"
+                    >Đăng Nhập</a
+                  >
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <img src="../img/flight.png" alt="" class="flight-img">
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/signUp.js"></script>
+  </body>
+</html>

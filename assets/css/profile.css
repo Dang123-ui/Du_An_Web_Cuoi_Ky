@@ -1,0 +1,31 @@
+
+/* Xóa màu nền và viền mặc định của button khi được chọn */
+.nav-pills .nav-link {
+    color: inherit; /* Giữ nguyên màu chữ */
+    background-color: transparent; /* Xóa màu nền */
+    border: none; /* Xóa viền */
+    border-bottom: 1px solid transparent; /* Gạch dưới ẩn mặc định */
+    transition: border-color 0.3s ease-in-out; /* Hiệu ứng chuyển đổi */
+}
+
+/* Hiển thị gạch dưới khi button được chọn */
+.nav-pills .nav-link.active {
+    border-bottom: 1px solid black; /* Gạch dưới màu xanh */
+    color: #ff891e; /* Giữ nguyên màu chữ */
+    background-color: transparent; /* Không tô màu nền */
+}
+
+/* Hiệu ứng hover (tùy chọn) */
+.nav-pills .nav-link:hover {
+    border-bottom: 1px solid black; /* Gạch dưới khi hover */
+    color: #ff891e;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+table a{
+    color: #fff !important;
+}

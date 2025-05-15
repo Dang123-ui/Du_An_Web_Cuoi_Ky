@@ -1,0 +1,60 @@
+1.Thống kê tổng quan
+Tổng số tour đã bán
+Doanh thu theo ngày/tháng/năm
+Số lượng khách hàng mới
+Tour được đặt nhiều nhất
+Biểu đồ doanh thu theo thời gian
+
+2.Quản lý Tour
+Danh sách tour
+Thêm/sửa/xóa tour
+Quản lý giá tour
+Quản lý lịch trình
+Quản lý điểm đến
+Theo dõi số lượng đặt tour
+
+3.Quản lý đơn đặt tour
+Danh sách đơn đặt tour
+Chi tiết đơn đặt
+Trạng thái đơn (chờ xác nhận, đã xác nhận, đã thanh toán...)
+Xử lý hủy/hoàn tiền
+
+4.Quản lý khách hàng
+Danh sách khách hàng
+Thông tin chi tiết khách hàng
+Lịch sử đặt tour
+Quản lý tài khoản khách hàng
+
+5.Quản lý nhân viên
+Danh sách nhân viên
+Phân quyền truy cập
+Thêm/sửa/xóa tài khoản nhân viên
+
+6.Quản lý đánh giá/bình luận
+Danh sách đánh giá tour
+Phê duyệt/ẩn bình luận
+Phản hồi khách hàng
+
+7.Quản lý nội dung
+Quản lý bài viết/tin tức
+Banner/slider
+Trang tĩnh (About, Contact...)
+SEO
+
+8.Báo cáo & Thống kê
+Báo cáo doanh thu
+Thống kê tour hot
+Thống kê khách hàng
+Xuất báo cáo PDF/Excel
+
+9.Cài đặt hệ thống
+Thông tin website
+Email template
+Cấu hình thanh toán
+Backup dữ liệu
+
+10.Tính năng bảo mật
+Đăng nhập 2 lớp
+Nhật ký hoạt động
+Phân quyền chi tiết
+Khóa IP không hợp lệ

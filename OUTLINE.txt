@@ -1,0 +1,10 @@
+- SỬA UI : Homepage, nút đăng ký, đăng nhập (kiểm tra lại backend) ; footer
+- SỬA UX: Sửa lại mấy cái nút để nó display correctly; 
+- TÍNH NĂNG:
+    + làm tính năng đặt vé
+    + Tính năng đăng nhập riêng cho admin
+    + Tính năng quản lý file, quản lý bài viết với text editor (CK Editor, CKFinder).
+    + Chỉnh UI chế độ sáng/ Tối
+    + In hóa đơn, nghiên cứu xử lý đa luồn nếu được
+    + Chỉnh lại address 
+    + Chỉnh lại database thêm khóa ngoại các thứ vào

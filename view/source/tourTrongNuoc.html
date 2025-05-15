@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="../../assets/css/css/style.css" />
+    <title>Tour trong nước</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+
+    <!-- PANEL -->
+    <div class="panner-bgr">
+      <div class="overlay">
+        <p>TOUR TRONG NƯỚC</p>
+      </div>
+    </div>
+
+    <!-- Search-form -->
+
+    <div class="search-form">
+      <form action="search.php" method="get" name="timkiem">
+        <div
+          class="row g-3"
+          style="display: flex; justify-content: center; margin-top: -25px"
+        >
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="form-group-centered">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="search"
+                  placeholder="Tìm tour : ..."
+                  aria-label="Tìm tour"
+                />
+                <span class="input-group-text">
+                  <i
+                    ><img src="../../assets/image/img/search.png" alt="" style="width: 25px"
+                  /></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="row g-2">
+              <div class="col-sm-4 col-xs-12">
+                <div class="input-group">
+                  <input
+                    type="date"
+                    class="form-control flatpickr-input"
+                    name="ngaydi"
+                    id="ngaydi"
+                    aria-label="Ngày đi"
+                    placeholder="Ngày đi"
+                  />
+                  <span
+                    class="input-group-text calendar-icon"
+                    style="border: none"
+                  >
+                    <i
+                      ><img
+                        src="../../assets/image/img/calendar.png"
+                        alt=""
+                        style="width: 25px"
+                    /></i>
+                  </span>
+                </div>
+              </div>
+              <div class="col-sm-4 col-xs-12">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control flatpickr-input"
+                    id="ngayve"
+                    name="ngayve"
+                    aria-label="Ngày về"
+                    autocomplete="off"
+                    placeholder="Ngày về"
+                  />
+                  <span
+                    class="input-group-text calendar-icon"
+                    style="border: none"
+                  >
+                    <i
+                      ><img
+                        src="../../assets/image/img/calendar.png"
+                        alt=""
+                        style="width: 25px"
+                    /></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-sm-4">
+                <div class="form-group-centered">
+                  <select
+                    class="form-select"
+                    name="type"
+                    aria-label="Loại tour"
+                  >
+                    <option value="0">Tất cả</option>
+                    <option value="1">Trong nước</option>
+                    <option value="2">Ngoài nước</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-2">
+            <div class="form-group-centered">
+              <button
+                type="submit"
+                class="btn"
+                style="
+                  width: 100%;
+                  font-weight: bold;
+                  background-color: orangered;
+                "
+              >
+                Tìm kiếm
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      class="innerpage-wrapper"
+      style="padding-top: 30px; background-color: whitesmoke"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-xs-8">
+            <div class="filter-list-tour">
+              <div class="filter-text">Sắp xếp :</div>
+              <div class="filter-tour">
+                <a class="filter-div active" href="#"> [ Ngày gần nhất ] </a>
+                <a class="filter-div" href="#" style="color: black">
+                  [ Giá thấp nhất ]
+                </a>
+                <a class="filter-div" href="#" style="color: black">
+                  [ Hấp dẫn nhất ]
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-4">
+            <div class="view-list-tour" style="gap: 10px">
+              <i onclick="return viewTour('grid')" class="active"
+                ><img src="../../assets/image/img/grid_.png" alt="" style="width: 40px"
+              /></i>
+              <span> | </span>
+              <i onclick="return viewTour('list')"
+                ><img src="../../assets/image/img/layout.png" alt="" style="width: 20px"
+              /></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tour-list">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Tây Ninh - Tòa Thánh Tây Ninh - Vườn Dâu Tằm Ba Phong - Núi Bà Đen"
+                  src="../../assets/image/img/du-lich-toa-thanh-tay-ninh.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">2.879.000</p>
+                <p class="info">2 ngày 1 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="3879"
+                    data-name="Du Lịch Tây Ninh - Tòa Thánh Tây Ninh - Vườn Dâu Tằm Ba Phong - Núi Bà Đen"
+                    data-price="2879000"
+                    data-category="Tour Tây Ninh"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="1"
+                    class="GAproductClick"
+                    title="Du Lịch Tây Ninh - Tòa Thánh Tây Ninh - Vườn Dâu Tằm Ba Phong - Núi Bà Đen"
+                  >
+                    Du Lịch Tây Ninh - Tòa Thánh Tây Ninh - Vườn Dâu Tằm Ba
+                    Phong - Núi Bà Đen
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Tây Ninh</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 2 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Vũng Tàu - Cần Giờ"
+                  src="../../assets/image/img/du-lich-vung-tau-can-gio.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">2.979.000</p>
+                <p class="info">2 ngày 1 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="3744"
+                    data-name="Du lịch Vũng Tàu - Cần Giờ"
+                    data-price="2979000"
+                    data-category="Tour Hồ Tràm"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="2"
+                    class="GAproductClick"
+                    title="Du Lịch Vũng Tàu - Cần Giờ"
+                  >
+                    Du Lịch Vũng Tàu - Cần Giờ
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Vũng Tàu</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 3 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <article
+              id="advertisementTour"
+              class="box box-kiritm box-tour advertisements"
+              style="height: 358px"
+            >
+              <div
+                class="advertisement-content"
+                style="height: 100%; text-align: center; width: 100%"
+              >
+                <p>
+                  <a
+                    href="https://saigontourist.net/trang/gioi-thieu-ung-dung-di-dong-saigontourist-travel"
+                    target="_blank"
+                    ><img
+                      alt=""
+                      src="https://saigontourist.net/uploads/images/for-mobile/banner-web-tai-App.jpg"
+                      style="width: 95%"
+                  /></a>
+                </p>
+
+                <p>&nbsp;</p>
+
+                <p>&nbsp;</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Tour 4 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lich Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng [Giỗ Tổ Hùng Vương]"
+                  src="../../assets/image/img/du-lich-phan-thiet-vung-tau-mui-ne.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">4.539.000</p>
+                <p class="info">3 ngày 2 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="1038"
+                    data-name="Du Lich Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng [Giỗ Tổ Hùng Vương]"
+                    data-price="4539000"
+                    data-category="Tour Phan Thiết"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="3"
+                    class="GAproductClick"
+                    title="Du Lich Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng [Giỗ Tổ Hùng Vương]"
+                  >
+                    Du Lich Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng [Giỗ
+                    Tổ Hùng Vương]
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Phan Thiết</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour 5 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Nghỉ Dưỡng Tại Minera Hot Spring Bình Châu"
+                  src="../../assets/image/img/du-lich-minera-hot-pring-binh-chau.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">4.679.000</p>
+                <p class="info">3 ngày 2 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="5685"
+                    data-name="Du Lịch Nghỉ Dưỡng Tại Minera Hot Spring Bình Châu"
+                    data-price="4679000"
+                    data-category="Mùa Vu Lan"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="4"
+                    class="GAproductClick"
+                    title="Du Lịch Nghỉ Dưỡng Tại Minera Hot Spring Bình Châu"
+                  >
+                    Du Lịch Nghỉ Dưỡng Tại Minera Hot Spring Bình Châu
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">
+                  TP. Hồ Chí Minh - Hồ Tràm | Vũng Tàu
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 6 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Hà Nội – Ninh Bình – Tràng An – Bái Đính – Hạ Long – Sapa – Fansipan – Lào Cai"
+                  src="../../assets/image/img/du-lich-ha-noi-ninh-binh-trang-an-ha-long-trang-an-bai-dinh-sapa-fansipan-laocai.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">11.679.000</p>
+                <p class="info">6 ngày 5 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 700.000đ/1 khách"
+                  >
+                    Giảm 700.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="3839"
+                    data-name="Du Lịch Hà Nội – Ninh Bình – Tràng An – Bái Đính – Hạ Long – Sapa – Fansipan – Lào Cai"
+                    data-price="11679000"
+                    data-category="Tour Ninh Bình"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="5"
+                    class="GAproductClick"
+                    title="Du Lịch Hà Nội – Ninh Bình – Tràng An – Bái Đính – Hạ Long – Sapa – Fansipan – Lào Cai"
+                  >
+                    Du Lịch Hà Nội – Ninh Bình – Tràng An – Bái Đính – Hạ Long –
+                    Sapa – Fansipan – Lào Cai
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">
+                  TP. Hồ Chí Minh - Hà Nội | Hạ Long | Ninh Bình | Sapa
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 7 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Đà Nẵng - Bà Nà - Hội An - Động Thiên Đường - Huế"
+                  src="../../assets/image/img/du-lich-hue-thien-duong.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">9.749.000</p>
+                <p class="info">5 ngày 4 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 600.000đ/1 khách"
+                  >
+                    Giảm 600.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="3788"
+                    data-name="Du Lịch Đà Nẵng - Bà Nà - Hội An - Động Thiên Đường - Huế"
+                    data-price="9749000"
+                    data-category="Tour Huế"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="6"
+                    class="GAproductClick"
+                    title="Du Lịch Đà Nẵng - Bà Nà - Hội An - Động Thiên Đường - Huế"
+                  >
+                    Du Lịch Đà Nẵng - Bà Nà - Hội An - Động Thiên Đường - Huế
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">
+                  TP. Hồ Chí Minh - Huế | Hội An | Đà Nẵng
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 8 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du lịch Đà Lạt - Samten Hills - Puppy Farm - Langbiang - Gallery La Chocotea - Thác Bobla"
+                  src="../../assets/image/img/du-lich-da-lat.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">3.739.000</p>
+                <p class="info">4 ngày 3 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 600.000đ/1 khách"
+                  >
+                    Giảm 300.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="456"
+                    data-name="Du lịch Đà Lạt - Samten Hills - Puppy Farm - Langbiang - Gallery La Chocotea - Thác Bobla"
+                    data-price="3739000"
+                    data-category="Tour Đà Lạt"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="7"
+                    class="GAproductClick"
+                    title="Du lịch Đà Lạt - Samten Hills - Puppy Farm - Langbiang - Gallery La Chocotea - Thác Bobla"
+                  >
+                    Du lịch Đà Lạt - Samten Hills - Puppy Farm - Langbiang -
+                    Gallery La Chocotea - Thác Bobla
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Đà Lạt</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 9 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Nha Trang - Thác Yang Bay - Đảo Hoa Lan - Chùa Long Sơn - Làng Yến Mai Sinh"
+                  src="../../assets/image/img/du-lich-nha-trang.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">3.779.000</p>
+                <p class="info">4 ngày 3 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 600.000đ/1 khách"
+                  >
+                    Giảm 300.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="5738"
+                    data-name="Du Lịch Nha Trang - Thác Yang Bay - Đảo Hoa Lan - Chùa Long Sơn - Làng Yến Mai Sinh"
+                    data-price="3779000"
+                    data-category="Tour Nha Trang"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="8"
+                    class="GAproductClick"
+                    title="Du Lịch Nha Trang - Thác Yang Bay - Đảo Hoa Lan - Chùa Long Sơn - Làng Yến Mai Sinh"
+                  >
+                    Du Lịch Nha Trang - Thác Yang Bay - Đảo Hoa Lan - Chùa Long
+                    Sơn - Làng Yến Mai Sinh
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Nha Trang</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid container-slider">
+      <div class="slider">
+        <div class="item">
+          <!-- Tour 10 -->
+          <div class="card" style="height: 100%">
+            <a href="#" class="popup-gallery">
+              <img
+                width="100%"
+                height="250"
+                alt="Du Lịch Cần Thơ – Cà Mau – Đất Mũi – Bạc Liêu – Sóc Trăng"
+                src="../../assets/image/img/du-lich-can-tho.jpg"
+              />
+            </a>
+            <div class="box-tour-price">
+              <p class="text">Giá từ</p>
+              <p class="price">4.679.000</p>
+              <p class="info">4 ngày 3 đêm</p>
+            </div>
+            <div class="details-kiritm">
+              <div class="promotion-tour">
+                <div class="text-promotion-tour" title="Giảm 600.000đ/1 khách">
+                  Giảm 300.000đ/1 khách
+                </div>
+              </div>
+              <div class="name-tour-detail">
+                <a
+                  href="#"
+                  data-url="#"
+                  data-id="4192"
+                  data-name="Du Lịch Cần Thơ – Cà Mau – Đất Mũi – Bạc Liêu – Sóc Trăng"
+                  data-price="4679000"
+                  data-category="Tour Miền Tây"
+                  data-brand="tour-trong-nuoc"
+                  data-list="List"
+                  data-position="9"
+                  class="GAproductClick"
+                  title="Du Lịch Cần Thơ – Cà Mau – Đất Mũi – Bạc Liêu – Sóc Trăng"
+                >
+                  Du Lịch Cần Thơ – Cà Mau – Đất Mũi – Bạc Liêu – Sóc Trăng
+                </a>
+              </div>
+            </div>
+            <div class="card-footer bottom-detail">
+              <div class="info-tour">TP. Hồ Chí Minh - Miền Tây | ĐBSCL</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tour 11 -->
+        <div class="item">
+          <div class="card" style="height: 100%">
+            <a href="#" class="popup-gallery">
+              <img
+                width="100%"
+                height="250"
+                alt="Du lịch Bến Tre - Trà Vinh - Vĩnh Long - Đồng Tháp - Tiền Giang"
+                src="../../assets/image/img/du-lich-mien-tay.jpg"
+              />
+            </a>
+            <div class="box-tour-price">
+              <p class="text">Giá từ</p>
+              <p class="price">4.979.000</p>
+              <p class="info">4 ngày 3 đêm</p>
+            </div>
+            <div class="details-kiritm">
+              <div class="promotion-tour">
+                <div class="text-promotion-tour" title="Giảm 300.000đ/1 khách">
+                  Giảm 300.000đ/1 khách
+                </div>
+              </div>
+              <div class="name-tour-detail">
+                <a
+                  href="#"
+                  data-url="#"
+                  data-id="3927"
+                  data-name="Du lịch Bến Tre - Trà Vinh - Vĩnh Long - Đồng Tháp - Tiền Giang"
+                  data-price="4979000"
+                  data-category="Tour Miền Tây"
+                  data-brand="tour-trong-nuoc"
+                  data-list="List"
+                  data-position="10"
+                  class="GAproductClick"
+                  title="Du lịch Bến Tre - Trà Vinh - Vĩnh Long - Đồng Tháp - Tiền Giang"
+                >
+                  Du lịch Bến Tre - Trà Vinh - Vĩnh Long - Đồng Tháp - Tiền
+                  Giang
+                </a>
+              </div>
+            </div>
+            <div class="card-footer bottom-detail">
+              <div class="info-tour">TP. Hồ Chí Minh - Miền Tây</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tour 12 -->
+        <div class="item">
+          <div class="card" style="height: 100%">
+            <a href="#" class="popup-gallery">
+              <img
+                width="100%"
+                height="250"
+                alt="Du Lịch Bảo Lộc - Tu Viện Bát Nhã - Chùa Di Đà - Thác Bobla - Nông Trường Trà Phước Lạc"
+                src="../../assets/image/img/du-lich-bao-loc-tu-vien-bat-nha.jpg"
+              />
+            </a>
+            <div class="box-tour-price">
+              <p class="text">Giá từ</p>
+              <p class="price">3.079.000</p>
+              <p class="info">3 ngày 2 đêm</p>
+            </div>
+            <div class="details-kiritm">
+              <div class="promotion-tour">
+                <div class="text-promotion-tour" title="Giảm 300.000đ/1 khách">
+                  Giảm 300.000đ/1 khách
+                </div>
+              </div>
+              <div class="name-tour-detail">
+                <a
+                  href="#"
+                  data-url="#"
+                  data-id="5432"
+                  data-name="Du Lịch Bảo Lộc - Tu Viện Bát Nhã - Chùa Di Đà - Thác Bobla - Nông Trường Trà Phước Lạc"
+                  data-price="3079000"
+                  data-category="Tour Hè trong nước 2024"
+                  data-brand="tour-trong-nuoc"
+                  data-list="List"
+                  data-position="11"
+                  class="GAproductClick"
+                  title="Du Lịch Bảo Lộc - Tu Viện Bát Nhã - Chùa Di Đà - Thác Bobla - Nông Trường Trà Phước Lạc"
+                >
+                  Du Lịch Bảo Lộc - Tu Viện Bát Nhã - Chùa Di Đà - Thác Bobla -
+                  Nông Trường Trà Phước Lạc
+                </a>
+              </div>
+            </div>
+            <div class="card-footer bottom-detail">
+              <div class="info-tour">TP. Hồ Chí Minh - Tây Nguyên</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tour 13 -->
+        <div class="item">
+          <div class="card" style="height: 100%">
+            <a href="#" class="popup-gallery">
+              <img
+                width="100%"
+                height="250"
+                alt="Du Lịch Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng - Trung Tâm Bùn Khoáng"
+                src="../../assets/image/img/du-lich-binh-thuan-mui-ne.jpg"
+              />
+            </a>
+            <div class="box-tour-price">
+              <p class="text">Giá từ</p>
+              <p class="price">3.679.000</p>
+              <p class="info">3 ngày 2 đêm</p>
+            </div>
+            <div class="details-kiritm">
+              <div class="promotion-tour">
+                <div class="text-promotion-tour" title="Giảm 300.000đ/1 khách">
+                  Giảm 300.000đ/1 khách
+                </div>
+              </div>
+              <div class="name-tour-detail">
+                <a
+                  href="#"
+                  data-url="#"
+                  data-id="3745"
+                  data-name="Du Lịch Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng - Trung Tâm Bùn Khoáng"
+                  data-price="3679000"
+                  data-category="Tour Hè trong nước 2024"
+                  data-brand="tour-trong-nuoc"
+                  data-list="List"
+                  data-position="12"
+                  class="GAproductClick"
+                  title="Du Lịch Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng - Trung Tâm Bùn Khoáng"
+                >
+                  Du Lịch Phan Thiết - Mũi Né - Làng Chài Xưa - Bàu Trắng -
+                  Trung Tâm Bùn Khoáng
+                </a>
+              </div>
+            </div>
+            <div class="card-footer bottom-detail">
+              <div class="info-tour">TP. Hồ Chí Minh - Phan Thiết</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tour 14 -->
+        <div class="item">
+          <div class="card" style="height: 100%">
+            <a href="#" class="popup-gallery">
+              <img
+                width="100%"
+                height="250"
+                alt="Du Lịch Bản Giốc - Pác Bó - Ba Bể - Thái Nguyên"
+                src="../../assets/image/img/du-lich-ban-gioc-thai-nguyen.jpg"
+              />
+            </a>
+            <div class="box-tour-price">
+              <p class="text">Giá từ</p>
+              <p class="price">9.139.000</p>
+              <p class="info">4 ngày 3 đêm</p>
+            </div>
+            <div class="details-kiritm">
+              <div class="promotion-tour">
+                <div class="text-promotion-tour" title="Giảm 500.000đ/1 khách">
+                  Giảm 500.000đ/1 khách
+                </div>
+              </div>
+              <div class="name-tour-detail">
+                <a
+                  href="#"
+                  data-url="#"
+                  data-id="4426"
+                  data-name="Du Lịch Bản Giốc - Pác Bó - Ba Bể - Thái Nguyên"
+                  data-price="9139000"
+                  data-category="Tour Đông Tây Bắc"
+                  data-brand="tour-trong-nuoc"
+                  data-list="List"
+                  data-position="13"
+                  class="GAproductClick"
+                  title="Du Lịch Bản Giốc - Pác Bó - Ba Bể - Thái Nguyên"
+                >
+                  Du Lịch Bản Giốc - Pác Bó - Ba Bể - Thái Nguyên
+                </a>
+              </div>
+            </div>
+            <div class="card-footer bottom-detail">
+              <div class="info-tour">TP. Hồ Chí Minh - Đông Bắc</div>
+            </div>
+          </div>
+        </div>
+        <!-- Tour 15 -->
+        <div class="item">
+          <div class="card" style="height: 100%">
+            <a href="#" class="popup-gallery">
+              <img
+                width="100%"
+                height="250"
+                alt="Du Lịch Hà Nội - Sapa - Lào Cai"
+                src="../../assets/image/img/du-lich-ha-noi-sapa-lao-cai.jpg"
+              />
+            </a>
+            <div class="box-tour-price">
+              <p class="text">Giá từ</p>
+              <p class="price">9.279.000</p>
+              <p class="info">4 ngày 3 đêm</p>
+            </div>
+            <div class="details-kiritm">
+              <div class="promotion-tour">
+                <div class="text-promotion-tour" title="Giảm 500.000đ/1 khách">
+                  Giảm 500.000đ/1 khách
+                </div>
+              </div>
+              <div class="name-tour-detail">
+                <a
+                  href="#"
+                  data-url="#"
+                  data-id="160"
+                  data-name="Du Lịch Hà Nội - Sapa - Lào Cai"
+                  data-price="9279000"
+                  data-category="Tour Hà Nội"
+                  data-brand="tour-trong-nuoc"
+                  data-list="List"
+                  data-position="14"
+                  class="GAproductClick"
+                  title="Du Lịch Hà Nội - Sapa - Lào Cai"
+                >
+                  Du Lịch Hà Nội - Sapa - Lào Cai
+                </a>
+              </div>
+            </div>
+            <div class="card-footer bottom-detail">
+              <div class="info-tour">TP. Hồ Chí Minh - Hà Nội | Sapa</div>
+            </div>
+          </div>
+        </div>
+
+        <button id="next">></button>
+        <button id="prev"><</button>
+      </div>
+    </div>
+
+    <div class="tour-list">
+      <div class="container">
+        <div class="row">
+          <!-- Tour 15 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Nghỉ Dưỡng Tại Bảo Lộc - Doi Dep Tea Resort"
+                  src="../../assets/image/img/du-lich-bao-loc-tea-resort.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">4.079.000</p>
+                <p class="info">3 ngày 2 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 300.000đ/1 khách"
+                  >
+                    Giảm 300.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="5686"
+                    data-name="Du Lịch Nghỉ Dưỡng Tại Bảo Lộc - Doi Dep Tea Resort"
+                    data-price="4079000"
+                    data-category="Mùa Vu Lan"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="15"
+                    class="GAproductClick"
+                    title="Du Lịch Nghỉ Dưỡng Tại Bảo Lộc - Doi Dep Tea Resort"
+                  >
+                    Du Lịch Nghỉ Dưỡng Tại Bảo Lộc - Doi Dep Tea Resort
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Tây Nguyên</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 16 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Liên Tuyến Phan Thiết - Đà Lạt"
+                  src="../../assets/image/img/du-lich-phan-thiet-da-lat.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">5.179.000</p>
+                <p class="info">4 ngày 3 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 300.000đ/1 khách"
+                  >
+                    Giảm 300.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="569"
+                    data-name="Du Lịch Liên Tuyến Phan Thiết - Đà Lạt"
+                    data-price="5179000"
+                    data-category="Tour Hè trong nước 2024"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="16"
+                    class="GAproductClick"
+                    title="Du Lịch Liên Tuyến Phan Thiết - Đà Lạt"
+                  >
+                    Du Lịch Liên Tuyến Phan Thiết - Đà Lạt
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">
+                  TP. Hồ Chí Minh - Phan Thiết | Đà Lạt
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 17 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Hà Nội – Ninh Bình – Thung Nham – Hạ Long – Sapa – Fansipan – Lào Cai"
+                  src="../../assets/image/img/du-lich-ninh-binh-ha-noi.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">11.679.000</p>
+                <p class="info">6 ngày 5 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 700.000đ/1 khách"
+                  >
+                    Giảm 700.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="4925"
+                    data-name="Du Lịch Hà Nội – Ninh Bình – Thung Nham – Hạ Long – Sapa – Fansipan – Lào Cai"
+                    data-price="11679000"
+                    data-category="Tour Hè trong nước 2024"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="17"
+                    class="GAproductClick"
+                    title="Du Lịch Hà Nội – Ninh Bình – Thung Nham – Hạ Long – Sapa – Fansipan – Lào Cai"
+                  >
+                    Du Lịch Hà Nội – Ninh Bình – Thung Nham – Hạ Long – Sapa –
+                    Fansipan – Lào Cai
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">
+                  TP. Hồ Chí Minh - Hà Nội | Hạ Long | Ninh Bình | Sapa
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 18 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Nghĩa Lộ - Mù Cang Chải - Sapa - Lai Châu - Điện Biên - Mộc Châu"
+                  src="../../assets/image/img/du-lich-nghia-lo-mu-cang-chai.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">12.079.000</p>
+                <p class="info">6 ngày 5 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 700.000đ/1 khách"
+                  >
+                    Giảm 700.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="1559"
+                    data-name="Du Lịch Nghĩa Lộ - Mù Cang Chải - Sapa - Lai Châu - Điện Biên - Mộc Châu"
+                    data-price="12079000"
+                    data-category="Tour Đông Tây Bắc"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="18"
+                    class="GAproductClick"
+                    title="Du Lịch Nghĩa Lộ - Mù Cang Chải - Sapa - Lai Châu - Điện Biên - Mộc Châu"
+                  >
+                    Du Lịch Nghĩa Lộ - Mù Cang Chải - Sapa - Lai Châu - Điện
+                    Biên - Mộc Châu
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Tây Bắc | Sapa</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour 19 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt='Du Lịch Bến Tre - Trà Vinh - Sóc Trăng - Bạc Liêu - Mũi Cà Mau - Hà Tiên - "Thất Sơn" An Giang - Long Xuyên - Đồng Tháp Mười'
+                  src="../../assets/image/img/du-lich-ben-tren-tra-vinh-soc-trang.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">8.179.000</p>
+                <p class="info">6 ngày 5 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="promotion-tour">
+                  <div
+                    class="text-promotion-tour"
+                    title="Giảm 400.000đ/1 khách"
+                  >
+                    Giảm 400.000đ/1 khách
+                  </div>
+                </div>
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="471"
+                    data-name='Du Lịch Bến Tre - Trà Vinh - Sóc Trăng - Bạc Liêu - Mũi Cà Mau - Hà Tiên - "Thất Sơn" An Giang - Long Xuyên - Đồng Tháp Mười'
+                    data-price="8179000"
+                    data-category="Tour Hè trong nước 2024"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="19"
+                    class="GAproductClick"
+                    title='Du Lịch Bến Tre - Trà Vinh - Sóc Trăng - Bạc Liêu - Mũi Cà Mau - Hà Tiên - "Thất Sơn" An Giang - Long Xuyên - Đồng Tháp Mười'
+                  >
+                    Du Lịch Bến Tre - Trà Vinh - Sóc Trăng - Bạc Liêu - Mũi Cà
+                    Mau - Hà Tiên - "Thất Sơn" An Giang - Long Xuyên - Đồng Tháp
+                    Mười
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Miền Tây</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tour 20 -->
+          <div class="col-md-4 col-sm-6 col-xs-12 tour-item">
+            <div class="card" style="height: 100%">
+              <a href="#" class="popup-gallery">
+                <img
+                  width="100%"
+                  height="250"
+                  alt="Du Lịch Vườn Quốc Gia Nam Cát Tiên - Khu Du Lịch Suối Mơ - Orchard Home Resort"
+                  src="../../assets/image/img/du-lich-vuon-quoc-gia-nam-cat-tien.jpg"
+                />
+              </a>
+              <div class="box-tour-price">
+                <p class="text">Giá từ</p>
+                <p class="price">2.979.000</p>
+                <p class="info">2 ngày 1 đêm</p>
+              </div>
+              <div class="details-kiritm">
+                <div class="name-tour-detail">
+                  <a
+                    href="#"
+                    data-url="#"
+                    data-id="4091"
+                    data-name="Du Lịch Vườn Quốc Gia Nam Cát Tiên - Khu Du Lịch Suối Mơ - Orchard Home Resort"
+                    data-price="2979000"
+                    data-category="Tour Đông Nam Bộ"
+                    data-brand="tour-trong-nuoc"
+                    data-list="List"
+                    data-position="20"
+                    class="GAproductClick"
+                    title="Du Lịch Vườn Quốc Gia Nam Cát Tiên - Khu Du Lịch Suối Mơ - Orchard Home Resort"
+                  >
+                    Du Lịch Vườn Quốc Gia Nam Cát Tiên - Khu Du Lịch Suối Mơ -
+                    Orchard Home Resort
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bottom-detail">
+                <div class="info-tour">TP. Hồ Chí Minh - Nam Cát Tiên</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <!-- Page -->
+        <div class="col-xs-12">
+          <div class="paginationCenter">
+            <ul class="pagination">
+              <li></li>
+              <li class="active">
+                <a href="/vi/tour-trong-nuoc?limit=20&amp;page=1"> 1 </a>
+              </li>
+              <li class="">
+                <a href="/vi/tour-trong-nuoc?limit=20&amp;page=2"> 2 </a>
+              </li>
+              <li class="">
+                <a href="/vi/tour-trong-nuoc?limit=20&amp;page=3"> 3 </a>
+              </li>
+              <li class="">
+                <a href="/vi/tour-trong-nuoc?limit=20&amp;page=4"> 4 </a>
+              </li>
+              <li>
+                <a
+                  href="/vi/tour-trong-nuoc?limit=20&amp;page=2"
+                  aria-label="Next"
+                >
+                  <span aria-hidden="true"
+                    >Tiếp ->
+                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <footer>
+      <div
+        class="footer clearfix"
+        style="
+          background-image: url(../../assets/image/img/bg-footer.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: top;
+        "
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 col-sm-4 col-xs-12">
+              <div class="info-sgt-box">
+                <div class="info-sgt-logo">
+                  <img
+                    class="image-info-footer"
+                    src="../../assets/image/img/img_logo.png"
+                    alt="image commitment"
+                    style="height: 50px;"
+                  />
+                </div>
+                <div class="info-sgt-title">
+                  Lữ hành Saigontourist, thương hiệu lữ hành hàng đầu Việt
+                  Nam<br />
+                  Thương hiệu quốc gia
+                </div>
+                <div class="info-sgt-image">
+                  <img
+                    class="image-info-footer"
+                    src="/img/prize.png"
+                    alt="image commitment"
+                    style="width: 100px;"
+                  />
+                </div>
+                <div class="info-sgt-contact">
+                  <p class="contact-phone" href="tel:1900 1808">
+                    Tổng đài: <span class="number-phone">1900 1808</span>
+                  </p>
+                  <p class="contact-email" href="mailto:info@saigontourist.net">
+                    Email: info@saigontourist.net
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-sm-8 col-xs-12">
+              <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                  <div class="footerContent info-sgt-box">
+                    <h5>DỊCH VỤ</h5>
+
+                    <ul>
+                      <li>
+                        <a class="link-level4-light" href="/tour-trong-nuoc"
+                          >Tour trong nước</a
+                        >
+                      </li>
+                      <li>
+                        <a class="link-level4-light" href="/tour-nuoc-ngoai"
+                          >Tour nước ngoài</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.dichvu.saigontourist.net/"
+                          target="_blank"
+                          >Dịch vụ du lịch</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/dich-vu-ve-may-bay"
+                          >Vé máy bay</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/dich-vu-thue-xe"
+                          >Thuê xe</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://duhoc.saigontourist.net/"
+                          target="_blank"
+                          >Du học Saigontourist</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.tuyendungsaigontourist.vn/"
+                          target="_blank"
+                          >Việc làm ngoài nước</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="footerContent info-sgt-box">
+                    <h5>THÔNG TIN</h5>
+
+                    <ul>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/bai-viet/tin-saigontourist"
+                          >Tin Lữ hành&nbsp;Saigontourist</a
+                        >
+                      </li>
+                      <li>
+                        <a href="https://saigontourist.net/tuyen-diem"
+                          >Tuyến điểm</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://saigontourist.net/trang/trach-nhiem-xa-hoi"
+                          target="_blank"
+                          >Trách nhiệm&nbsp;xã hội</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                  <div class="footerContent info-sgt-box">
+                    <h5>CHĂM SÓC KHÁCH HÀNG</h5>
+
+                    <ul>
+                      <li>
+                        <a
+                          href="https://khachhang.saigontourist.net/"
+                          target="_blank"
+                          >Thẻ khách hàng</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://cskh.appsgt.net/doi-thuong-qua-tang"
+                          target="_blank"
+                          >Đổi điểm Hoa Mai Vàng</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://saigontourist.net/trang/gioi-thieu-ung-dung-di-dong-saigontourist-travel"
+                          target="_blank"
+                          >Tải App Saigontourist</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/travel-voucher"
+                          target="_blank"
+                          >Travel Voucher
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/bao-hiem-du-lich"
+                          target="_blank"
+                          >Bảo hiểm Du lịch</a
+                        >
+                      </li>
+                      <li>
+                        <a class="link-level4-light" href="/y-kien-khach-hang"
+                          >Ý kiến khách hàng</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://cskh.appsgt.net/publish/tourgrouplink/vi-vn"
+                          target="_blank"
+                          >Tra cứu thông tin Đoàn</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://saigontourist.net/trang/quy-trinh-giai-quyet-khieu-nai"
+                          target="_blank"
+                          >Giải quyết khiếu nại</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                  <div class="footerContent info-sgt-box">
+                    <h5>LIÊN HỆ</h5>
+
+                    <ul>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/gioi-thieu-lu-hanh-saigontourist"
+                          >Giới thiệu</a
+                        >
+                      </li>
+                      <li>
+                        <a class="link-level4-light" href="/lien-he">Liên hệ</a>
+                      </li>
+                      <li>
+                        <a class="link-level4-light" href="/chi-nhanh"
+                          >Chi nhánh</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/quy-dinh-bao-ve"
+                          >Quy định bảo vệ
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/dieu-khoan-chung"
+                          >Điều khoản chung
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://saigontourist.net/trang/huong-dan-thanh-toan-tren-website"
+                          >Hướng dẫn mua tour online</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/quy-dinh-thanh-toan"
+                          >Quy định thanh toán</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/chinh-sach-giao-nhan"
+                          >Chính sách giao nhận</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/chinh-sach-huy-phat"
+                          >Chính sách hủy phạt</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="/trang/chinh-sach-bao-mat-va-thu-thap-thong-tin"
+                          >Chính sách bảo mật</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://saigontourist.net/trang/chinh-sach-chat-luong"
+                          target="_blank"
+                          >Chính sách chất lượng</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="link-level4-light"
+                          href="https://www.tuyendungsaigontourist.vn/"
+                          target="_blank"
+                          >Tuyển dụng</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-footer clearfix">
+        <div class="col-sm-12 col-xs-12 copyright-style">
+          <p style="text-align: center">
+            <img
+              alt=""
+              src="https://www.saigontourist.net/uploads/images/thequocte.gif"
+              style="width: 60%"
+            />
+          </p>
+
+          <p style="text-align: center">
+            <span style="font-size: 11px"
+              >Bản quyền 2006 - 2024&nbsp;© Công ty TNHH Một Thành Viên Dịch vụ
+              Lữ hành An Huân Đăng.<br />
+              45 Lê Thánh Tôn, Quận 1, TPHCM.</span
+            >
+          </p>
+
+          <p style="text-align: center">
+            <span style="font-size: 11px"
+              >ĐT:&nbsp;<span dir="ltr"
+                ><span dir="ltr"> (84-28) 38 279 279&nbsp;</span></span
+              >- Fax: (84-28) 38 224 987.&nbsp;<br />
+              Số đăng ký kinh doanh: 0310891532 do Sở kế hoạch và đầu tư
+              TPHCM&nbsp;cấp/thay đổi lần thứ 12, ngày 26/12/2023<br />
+              Giấy phép kinh doanh Dịch vụ Lữ hành Quốc tế: 79-300/2018&nbsp;/
+              TCDL-GP-LHQT<br />
+              Người đại diện: Ông Zoãn Xuân Thanh.</span
+            >
+          </p>
+
+          
+          <p style="text-align: center">
+            <span style="font-size: 11px"
+              ><a
+                href="https://saigontourist.net/trang/gioi-thieu-ung-dung-di-dong-saigontourist-travel"
+                target="_blank"
+                ><img
+                  alt=""
+                  src="https://saigontourist.net/uploads/images/for-mobile/banner-web-tai-App.jpg"
+                  style="width: 350px; height: 222px" /></a
+            ></span>
+          </p>
+
+          <p style="text-align: center">&nbsp;</p>
+
+          <h3 style="text-align: center">
+            Tư vấn &amp; đặt dịch vụ: 1900 1808
+          </h3>
+
+          <p style="text-align: center">
+            Website <strong>SAIGONTOURIST.NET</strong> đã
+            <a
+              href="http://online.gov.vn/CustomWebsiteDisplay.aspx?DocId=36659"
+              target="_blank"
+              >được đăng ký</a
+            >
+            với Bộ Công Thương
+          </p>
+
+          <p style="text-align: center">
+            <a
+              href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=36659"
+              target="_blank"
+              ><img
+                alt=""
+                src="https://saigontourist.net/uploads/homepage/20150827110756-dathongbao.png"
+                style="
+                  width: 200px;
+                  height: 70px;
+                  margin-top: 10px;
+                  margin-bottom: 10px;
+                  border-width: 0px;
+                  border-style: solid;
+                "
+            /></a>
+          </p>
+
+          <p style="text-align: center">
+            Kết nối với Lữ hành Saigontourist&nbsp; &nbsp;<a
+              href="https://www.facebook.com/saigontourist.sts"
+              target="_blank"
+              ><img
+                alt="Saigontourist"
+                src="https://www.saigontourist.net/uploads/images/social-fa.gif"
+                style="height: 50px; width: 50px"
+            /></a>
+          </p>
+
+          <p>&nbsp;</p>
+        </div>
+      </div>
+      <div class="copyRight clearfix">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-xs-12">
+              <div class="copyRightText">
+                <p style="text-align: right">
+                  Copyright © 2025. All Rights Reserved by "Đồ Án cuối kỳ môn Nhập môn Web."
+                
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/vn.js"></script>
+    <script src="../../assets/javascript/js/style.js"></script>
+  </body>
+</html>
